@@ -48,6 +48,10 @@ const articleTemplate = (props) => {
             spinner.classList.add('hidden');
             circle.classList.remove('hidden');
             addToCart({id: props.id});
+            setTimeout(() => {
+                circle.classList.add('hidden');
+                addButton.classList.remove('hidden');
+            },1500)
         },2000)
     })
 
@@ -73,7 +77,10 @@ const cartTemplate = (props) => {
             </header>
             <main>
                 <h5>${props.title}</h5>
-                <span>${props.price}</span>
+                <div>
+                    <span class="articlePrice">${props.price}</span>
+                    <span class="numberOfThis">${props.count}</span>
+                </div>
             </main>
             <footer>
                 <a onclick="removeFromCart({id: ${props.id}})">
@@ -102,16 +109,16 @@ const signUpTemplate = (props) => {
             <form action="../../index.html" method="post">
 
                 <label for="username">Nombre de usuario</label>
-                <input type="text" name="username" id="username" placeholder="Enter Your Name">
+                <input type="text" name="username" id="username" placeholder="Enter Your Name" required>
 
                 <label for="email">Correo electronico</label>
-                <input type="email" name="email" id="email" placeholder="Enter Your Email">
+                <input type="email" name="email" id="email" placeholder="Enter Your Email" required>
 
                 <label for="password">Contrasena</label>
-                <input type="password" name="password" id="password" placeholder="Enter Your Password">
+                <input type="password" name="password" id="password" placeholder="Enter Your Password" required>
 
                 <label for="c-password">Confirmar contrasena</label>
-                <input type="password" name="c-password" id="c-password" placeholder="Enter Your Password Again">
+                <input type="password" name="c-password" id="c-password" placeholder="Enter Your Password Again" required>
 
                 <input type="submit" value="Sing Up" onclick="registerNewUser({
                     email: document.getElementById('email').value,
@@ -151,9 +158,9 @@ const signInTemplate = (props) => {
             <h1>Sign In</h1>
             <form action="#">
                 <label for="email">Email</label>
-                <input type="email" name="email" id="email" placeholder="Enter Your Email">
+                <input type="email" name="email" id="email" placeholder="Enter Your Email" required>
                 <label for="password">Password</label>
-                <input type="password" name="password" id="password" placeholder="Enter Your Password">
+                <input type="password" name="password" id="password" placeholder="Enter Your Password" required>
                 <input type="submit" value="Sign In">
             </form>
             <p>or</p>
@@ -204,5 +211,93 @@ const userHeaderData = (props) => {
     `;
 
     $("#" + props.container).append($.parseHTML(template));
+
+}
+
+const paymentArticle = (props) => {
+
+    let template = 
+    `
+    <article>
+        <div class="column column--left">
+            <header>
+                <img src="${props.item.img}" alt="Article's image">
+            </header>
+            <main>
+                <h3>${props.item.title}</h3>
+            </main>
+        </div>
+        <div class="column column--right">
+            <footer>
+                <div class="quantity">
+                    <a class="minus" onclick="decrementCount({id: ${props.item.id}})">
+                        <i class="fas fa-minus"></i>
+                    </a>
+                    <span>${props.item.count}</span>
+                    <a class="plus" onclick="incrementCount({id: ${props.item.id}})">
+                        <i class="fas fa-plus"></i>
+                    </a>
+                </div>
+                <p>
+                    ${props.item.price}
+                </p>
+            </footer>
+        </div>
+    </article>
+    `;
+
+    $('.' + props.container).append($.parseHTML(template));
+
+}
+
+const paymentCheckout = (props) => {
+
+    let template = 
+    `
+    <h1>Checkout</h1>
+    <div class="items">
+    </div>
+    <div class="total">
+        <p>
+            Total:
+            <span id="totalPrice"></span>
+        </p>
+    </div>
+    `;
+    
+    $("#" + props.container).append($.parseHTML(template)).addClass('checkout');
+
+}
+
+const paymentAddress = (props) => {
+
+    let template = 
+    `
+    <div class="summary">
+    </div>
+    <div class="options">
+        <h1>Delivery</h1>
+        <div id="addresses">
+            <div class="row row--upper" id="addressHandler">
+            </div>
+            <div class="row row--lower">
+                <div class="column column--left"></div>
+                <div class="column column--right">
+                    <a href="">
+                        <i class="far fa-edit"></i> 
+                    </a>
+                    <a href="" class="warning">
+                        <i class="far fa-trash-alt"></i>
+                    </a>
+                    <a href="#">
+                        <i class="far fa-plus-square"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    `;
+
+    $('#' + props.container).append($.parseHTML(template)).addClass('delivery');
 
 }

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment | Awesome Company</title>
+
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" href="../../assets/images/icon.png">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../style/reset.css">
+    <link rel="stylesheet" href="../../style/main.css">
+    <link rel="stylesheet" href="../../style/specific/payment.css">
+
+    <!-- JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="../../assets/lib/raphael.js"></script>
+    <script src="../../assets/lib/progress.js"></script>
+
+    <!-- ICONS -->
+    <script src="https://kit.fontawesome.com/a68a4e99a5.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    
+    <header id="header">
+        <div class="container">
+            <a href="../../index.html">Awesome Company</a>
+            <nav>
+                <ul class="column column--left">
+                </ul>
+                <ul class="column column--right">
+                    
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="payment">
+        <div class="container">
+            <div class="process">
+                <div id="progress"></div>
+            </div>
+            <div id="content">
+                <div class="summary">
+
+                </div>
+                <div class="options">
+                    <h1>Delivery</h1>
+                    <div id="addresses">
+                        <div class="row row--upper" id="addressHandler">
+                        </div>
+                        <div class="row row--lower">
+                            <div class="column column--left"></div>
+                            <div class="column column--right">
+                                <a href="">
+                                    <i class="far fa-edit"></i> 
+                                </a>
+                                <a href="" class="warning">
+                                    <i class="far fa-trash-alt"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="far fa-plus-square"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="payment">
+                <div class="column column--left">
+                    
+                </div>
+                <div class="column column--right">
+                    <a id="previousStep" class="hidden">Previous Step</a>
+                    <a id="nextStep">Procced to address</a>
+                </div>
+            </div>
+        </div>
+    </section>    
+
+    <footer id="footer">
+        <div class="container">
+            <div class="row row--upper">
+                
+            </div>
+            <div class="row row--lower">
+                <div class="column column--left">
+                    <a href="#">Términos y condiciones</a>
+                    <a href="#">Políticas de cookies</a>
+                    <a href="#">Políticas de cookies</a>
+                </div>
+                <div class="column column--right">
+                    <p>Made with <span>❤</span> by <a href="https://carlospomares.es">Pomaretta</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
+    <script src="../../assets/js/User/UserDB.js"></script>
+    <script src="../../assets/js/ItemDB.js"></script>
+    <script src="../../assets/js/Persistent.js"></script>
+    <script src="../../assets/js/Template.js"></script>
+    <script src="../../assets/js/Payment/Checkout.js"></script>
+    <script src="../../assets/js/Payment/Delivery.js"></script>
+    <script src="../../assets/js/Payment/Payment.js"></script>
+
+    <script>
+
+        let currentStep = 0;
+
+        // PROGRESS DIV
+        let progressDiv = $('#progress');
+        let progressBar = progressDiv.progressStep(
+            {
+                strokeColor:"#4D6CFA"
+                ,activeColor: '#4D6CFA'
+                ,strokeColor: '#757575'
+            }
+        );
+        progressBar.addStep("Chose Vendor");
+        progressBar.addStep("Delivery Details");
+        progressBar.addStep("Payment Method");
+        progressBar.refreshLayout();
+
+        changeStep({step: 0,progressBar: progressBar,previousStep: $('#previousStep'), nextStep: $('#nextStep')});
+
+        // INTERACTIVITY
+        $(".address").each((index) => {
+            $(".address").get(index).onclick = () => {
+                if($(".address").get(index).classList.contains('selected')){
+                    $(".address").get(index).classList.remove('selected');
+                } else {
+                    $(".address").each((index) => {
+                        if($(".address").get(index).classList.contains('selected')){
+                            $(".address").get(index).classList.remove('selected');
+                        }
+                    })
+                    $(".address").get(index).classList.add('selected');
+                }
+            }
+        })
+
+    </script>
+
+</body>
+</html>

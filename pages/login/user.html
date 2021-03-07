@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login | XR Web</title>
+ 
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" href="../../assets/images/icon.png">
 
     <!-- CSS -->
     <link rel="stylesheet" href="../../style/reset.css">
@@ -22,7 +24,7 @@
     
     <header id="header">
         <div class="container">
-            <a href="../../index.html">XR Company</a>
+            <a href="../../index.html">Awesome Company</a>
             <nav>
                 <ul class="column column--left">
                 </ul>
@@ -77,8 +79,10 @@
         let query = new URLSearchParams(params);
 
         if(query.get('type') == "sign-in"){
+            document.title = "Sign In | Awesome Company"
             signInTemplate({container: 'content',id: 'sign-in'});
         } else {
+            document.title = "Sign Up | Awesome Company"
             signUpTemplate({container: 'content',id: 'sign-up'});
         }
 

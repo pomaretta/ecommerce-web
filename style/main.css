@@ -387,12 +387,21 @@
     word-break: break-all;
 }
 
-#activity .container nav .column.column--right li > .dropdown .row.row--upper li .item > main span {
+#activity .container nav .column.column--right li > .dropdown .row.row--upper li .item > main span.articlePrice {
     font-size: 14px;
     color: #4D6CFA;
+    margin-right: 10px;
 }
 
-#activity .container nav .column.column--right li > .dropdown .row.row--upper li .item > main span::after {
+#activity .container nav .column.column--right li > .dropdown .row.row--upper li .item > main span.numberOfThis::before {
+    content: 'x';
+}
+
+#activity .container nav .column.column--right li > .dropdown .row.row--upper li .item > main span.numberOfThis {
+    font-size: 12px;
+}
+
+#activity .container nav .column.column--right li > .dropdown .row.row--upper li .item > main span.articlePrice::after {
     content: '€';
 }
 
@@ -437,6 +446,7 @@
 #activity .container nav .column.column--right li > .dropdown .row.row--lower li:last-child a {
     color: #fff;
     background-color: #4D6CFA;
+    font-size: 12px;
     border: 1px solid #4D6CFA;
 }
 

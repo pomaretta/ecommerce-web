@@ -45,13 +45,13 @@ const items = [
 
 const normalizeUrl = (props) => {
     let location = props.location;
-    let item = props.item;
+    let img = props.img;
 
     // INPUT assets/images/items/pantalon.jpg
     // LOCATION <ROOT>/pages/category.html
     // DESIRED OUTPUT ../../assets/images/items/pantalon.jpg
 
-    item.img = location + item.img;
+    img = location + img;
 
-    return item;
+    return img;
 }

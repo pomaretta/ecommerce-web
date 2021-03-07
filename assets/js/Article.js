@@ -15,11 +15,11 @@ const updateCart = () => {
     $("#cartItems").empty();
 
     items.map((item) => {
-        total += parseFloat(item.price);
-        cartTemplate({id: item.id,img: item.img,title: item.title, price: item.price,container: 'cartItems'});
+        total += parseFloat(item.price) * parseInt(item.count);
+        cartTemplate({id: item.id,img: item.img,title: item.title, price: item.price,count: item.count,container: 'cartItems'});
     });
 
-    $("#total").html(total);
+    $("#total").html(total.toFixed(2));
 
 }
 
@@ -27,13 +27,26 @@ const insertItem = (props) => {
     
     // GET DATA
     let data = [];
-    data = JSON.parse(getData({key: "cart"}));
+    let exists = false;
 
+    data = JSON.parse(getData({key: "cart"}));
+    
     if(data == null){
         data = [];
+        props.item["count"] = "1";
         data.push(props.item);
     } else {
-        data.push(props.item);
+        data.filter((item) => {
+            if(item.id == props.item.id){
+                item.count = parseInt(item.count) + 1;
+                exists = true;
+            }
+            return true;
+        });
+        if(!exists){
+            props.item["count"] = "1";
+            data.push(props.item);
+        }
     }
 
     // SET DATA
