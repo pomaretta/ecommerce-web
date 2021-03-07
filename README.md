@@ -146,4 +146,4 @@ Project Link: [https://github.com/your_username/repo_name](https://github.com/yo
 [issues-url]: https://github.com/pomaretta/ecommerce-web/issues
 [license-shield]: https://img.shields.io/github/license/pomaretta/ecommerce-web.svg?style=for-the-badge
 [license-url]: https://github.com/pomaretta/ecommerce-web/blob/master/LICENSE.txt
-[product-screenshot]: readme/home.png
+[product-screenshot]: https://github.com/pomaretta/ecommerce-web/blob/master/readme/home.png
