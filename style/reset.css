@@ -1,0 +1,20 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: smooth;
+    font-family: Helvetica, sans-serif;
+}
+
+img {
+    max-width: 100%;
+}
+
+li, a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}

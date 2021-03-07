@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | XR Web</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../style/reset.css">
+    <link rel="stylesheet" href="../../style/main.css">
+    <link rel="stylesheet" href="../../style/specific/login.css">
+
+    <!-- JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <!-- ICONS -->
+    <script src="https://kit.fontawesome.com/a68a4e99a5.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    
+    <header id="header">
+        <div class="container">
+            <a href="../../index.html">XR Company</a>
+            <nav>
+                <ul class="column column--left">
+                </ul>
+                <ul class="column column--right">
+                    
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="content"></section>
+
+    <footer id="footer">
+        <div class="container">
+            <div class="row row--upper">
+                <div class="column column--left">
+                    <div>
+                        <h4>Contacta</h4>
+                        <a href="tel:971999888">📱 971 999 888</a>
+                        <a href="mailto:support@xrcompany.es">✉ support@xrcompany.es</a>
+                        <a href="https://www.google.es/maps/place/Carrer+Poeta+Guillem+Colom,+1,+07010+Palma,+Illes+Balears/@39.5846391,2.6498561,17z/data=!3m1!4b1!4m8!1m2!2m1!1sC%2F+San+Valentin,+23!3m4!1s0x129792f96fce532b:0x78bbef72d1e9347f!8m2!3d39.584635!4d2.6520448">C/ San Valentin, 23</a>
+                    </div>
+                </div>
+                <div class="column column--right">
+                    <iframe width="600" height="450" style="border:0" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/view?zoom=11&center=39.6013%2C2.6388&key=AIzaSyDwzXvWb5ytRvkh_9Rd22mP9s-XAoHBjcs"></iframe>
+                </div>
+            </div>
+            <div class="row row--lower">
+                <div class="column column--left">
+                    <a href="#">Términos y condiciones</a>
+                    <a href="#">Políticas de cookies</a>
+                    <a href="#">Políticas de cookies</a>
+                </div>
+                <div class="column column--right">
+                    <p>Made with <span>❤</span> by <a href="https://carlospomares.es">Pomaretta</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
+    <script src="../../assets/js/User/UserDB.js"></script>
+    <script src="../../assets/js/Template.js"></script>
+    <script src="../../assets/js/Persistent.js"></script>
+    <script src="../../assets/js/Hash.js"></script>
+    <script src="../../assets/js/User/RegisterNewUser.js"></script>
+    <script src="../../assets/js/User/LoginUser.js"></script>
+
+    <script>
+
+        let params = document.location.search;
+        let query = new URLSearchParams(params);
+
+        if(query.get('type') == "sign-in"){
+            signInTemplate({container: 'content',id: 'sign-in'});
+        } else {
+            signUpTemplate({container: 'content',id: 'sign-up'});
+        }
+
+
+    </script>
+
+</body>
+</html>

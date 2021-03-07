@@ -1,0 +1,253 @@
+/* SIGN UP */
+
+#sign-up {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 0;
+    
+    background: url("../../assets/images/hero.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+#sign-up .container {
+    align-items: center;
+    justify-content: center;
+}
+
+#sign-up .container .gateway {
+    display: flex;
+    flex-direction: column;
+    width: 450px;
+    padding: 40px 25px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 40px rgba(0,0,0,0.3);
+    justify-content: center;
+}
+
+#sign-up .container .gateway h1 {
+    color: var(--primary-color);
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+#sign-up .container .gateway form {
+    display: flex;
+    flex-direction: column;
+    padding: 15px 0;
+}
+
+#sign-up .container .gateway form label {
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+#sign-up .container .gateway form input {
+    padding: 7px 16px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    border: 3px solid gray;
+    font-size: 16px;
+}
+
+#sign-up .container .gateway form input[type="submit"] {
+    border-radius: 0px;
+    padding: 10px 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background: var(--primary-color);
+    border: 0;
+    border-radius: 12px;
+    margin-top: 25px;
+    margin-bottom: 0;
+    cursor: pointer;
+}
+
+#sign-up .container .gateway form input::placeholder {
+    font-size: 16px;
+    color: gray;
+}
+
+#sign-up .container .gateway > p {
+    align-self: center;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+#sign-up .container .gateway > button {
+    border-radius: 12px;
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--primary-color);
+    background-color: #fff;
+    cursor: pointer;
+    margin-bottom: 25px;
+}
+
+#sign-up .container .gateway > button span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#sign-up .container .gateway > button span svg {
+    width: 20px;
+    height: auto;
+    margin-right: 15px;
+}
+
+#sign-up .container .gateway > button span p {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+#sign-up .container .gateway .login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#sign-up .container .gateway .login p {
+    margin-right: 5px;
+}
+
+#sign-up .container .gateway .login a {
+    color: var(--primary-color);
+}
+
+/* LOGIN */
+
+#sign-in {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 0;
+    
+    background: url("../../assets/images/hero.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+#sign-in .container {
+    align-items: center;
+    justify-content: center;
+}
+
+#sign-in .container .gateway {
+    display: flex;
+    flex-direction: column;
+    width: 450px;
+    padding: 40px 25px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 40px rgba(0,0,0,0.3);
+    justify-content: center;
+}
+
+#sign-in .container .gateway h1 {
+    color: var(--primary-color);
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+#sign-in .container .gateway form {
+    display: flex;
+    flex-direction: column;
+    padding: 15px 0;
+}
+
+#sign-in .container .gateway form label {
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+#sign-in .container .gateway form input {
+    padding: 7px 16px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    border: 3px solid gray;
+    font-size: 16px;
+}
+
+#sign-in .container .gateway form input[type="submit"] {
+    border-radius: 0px;
+    padding: 10px 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background: var(--primary-color);
+    border: 0;
+    border-radius: 12px;
+    margin-top: 25px;
+    margin-bottom: 0;
+    cursor: pointer;
+}
+
+#sign-in .container .gateway form input::placeholder {
+    font-size: 16px;
+    color: gray;
+}
+
+#sign-in .container .gateway > p {
+    align-self: center;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+#sign-in .container .gateway > button {
+    border-radius: 12px;
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--primary-color);
+    background-color: #fff;
+    cursor: pointer;
+    margin-bottom: 25px;
+}
+
+#sign-in .container .gateway > button span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#sign-in .container .gateway > button span svg {
+    width: 20px;
+    height: auto;
+    margin-right: 15px;
+}
+
+#sign-in .container .gateway > button span p {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+#sign-in .container .gateway .login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#sign-in .container .gateway .login p {
+    margin-right: 5px;
+}
+
+#sign-in .container .gateway .login a {
+    color: var(--primary-color);
+}
