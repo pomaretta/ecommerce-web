@@ -1,0 +1,119 @@
+#search {
+
+    display: none;
+    background-color: rgba(0,0,0,0.6);
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: 20;
+
+}
+
+#search.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body.active {
+    overflow-y: hidden;
+    height: 100vh;
+}
+
+#search .container {
+    padding-top: 150px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#search .container input {
+    width: 90%;
+    height: 80px;
+    font-size: 28px;
+    padding: 1.2em;
+    border-radius: 8px;
+    border: 2px solid #757575;
+    color: #757575;
+    margin-bottom: 50px;
+}
+
+#search .container input:focus {
+    border: 0;
+    outline: 0;
+    box-shadow: 0 0 3pt 2pt var(--primary-color);
+}
+
+#search .container #result {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: scroll;
+}
+
+#search .container #result .item {
+    display: flex;
+    width: 90%;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #fff;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 25px;
+    border: 2px solid #fff;
+}
+
+#search .container #result .item:hover {
+    border: 2px solid var(--primary-color);
+}
+
+#search .container #result .item .column {
+    display: flex;
+}
+
+#search .container #result .item .column.column--left {
+    align-items: center;
+    justify-content: flex-start;
+}
+
+#search .container #result .item .column.column--left img {
+    height: 80px;
+    width: auto;
+    margin-right: 25px;
+}
+
+#search .container #result .item .column.column--left .description {
+    display: flex;
+    flex-direction: column;
+}
+
+#search .container #result .item .column.column--left .description h3 {
+    margin-bottom: 5px;
+    color: #292929;
+}
+
+#search .container #result .item .column.column--left .description p {
+    color: #757575;
+}
+
+#search .container #result .item .column.column--right {
+
+}
+
+#search .container #result .item .column.column--right span {
+    font-size: 18px;
+    margin-right: 25px;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+#search .container #result .item .column.column--right span::after {
+    content: '€';
+}

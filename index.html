@@ -12,6 +12,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="style/reset.css">
     <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="style/specific/search.css">
 
     <!-- JS -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -22,6 +23,14 @@
 </head>
 <body>
     
+    <div id="search">
+        <div class="container">
+            <input type="text" name="search" id="searchInput" placeholder="Search some content...">
+            <div id="result">
+            </div>
+        </div>
+    </div>
+
     <header id="header">
         <div class="container">
             <a href="./index.html">Awesome Company</a>
@@ -92,6 +101,11 @@
 
                 </ul>
                 <ul class="column column--right">
+                    <li>
+                        <a id="searchButton">
+                            <i class="fas fa-search"></i>
+                        </a>
+                    </li>
                     <li>
                         <a href="#" id="cart">
                             <i class="fas fa-shopping-cart"></i>
@@ -166,6 +180,7 @@
     <script src="./assets/js/Template.js"></script>
     <script src="./assets/js/Article.js"></script>
     <script src="./assets/js/Catalog.js"></script>
+    <script src="./assets/js/Search.js"></script>
 
     <script>
 
@@ -184,8 +199,8 @@
 
             let template = 
             `
-            <li><a href="./pages/login/user.html?type=sign-in">Login</a></li>
-            <li class="highlight"><a href="./pages/login/user.html?type=sign-up">Sign Up</a></li>     
+            <li><a href="./pages/login/index.html?type=sign-in">Login</a></li>
+            <li class="highlight"><a href="./pages/login/index.html?type=sign-up">Sign Up</a></li>     
             `;
 
             $('#userData').append($.parseHTML(template));
@@ -221,6 +236,18 @@
                 $("#userDrop").removeClass("collapse");
             } else {
                 $("#userDrop").addClass("collapse");
+            }
+        })
+
+        $("#searchButton").on('click', () => {
+            $("body").toggleClass('active')
+            $("#search").toggleClass('active')
+        })
+
+        $(document).keyup((e) => {
+            if($("#search").hasClass('active') && e.key == "Escape"){
+                $("body").toggleClass('active')
+                $("#search").toggleClass('active')
             }
         })
 

@@ -286,6 +286,8 @@
 
 #activity .container nav .column.column--right li {
     position: relative;
+    margin-left: 15px;
+    cursor: pointer;
 }
 
 #activity .container nav .column.column--right li > a {

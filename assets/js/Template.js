@@ -139,7 +139,7 @@ const signUpTemplate = (props) => {
 
             <div class="login">
                 <p>Already have an account?</p>
-                <a href="./user.html?type=sign-in">Sign In</a>
+                <a href="./index.html?type=sign-in">Sign In</a>
             </div>
         </div>
     </div>
@@ -172,7 +172,7 @@ const signInTemplate = (props) => {
             </button>
             <div class="login">
                 <p>Dont have an account?</p>
-                <a href="./user.html?type=sign-up">Sign Up</a>
+                <a href="./index.html?type=sign-up">Sign Up</a>
             </div>
         </div>
     </div>
