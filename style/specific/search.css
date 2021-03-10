@@ -57,6 +57,10 @@ body.active {
     overflow: scroll;
 }
 
+#search .container #result::-webkit-scrollbar {
+    width: 0;
+}
+
 #search .container #result .item {
     display: flex;
     width: 90%;

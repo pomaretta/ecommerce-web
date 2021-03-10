@@ -27,7 +27,7 @@ const fullTextSearch = (props) => {
     let data = items;
 
     data.filter((item) => {
-        if(item.title.includes(props.input) | item.description.includes(props.input)){
+        if(item.title.toLowerCase().includes(props.input.toLowerCase()) | item.description.toLowerCase().includes(props.input.toLowerCase())){
             return true;
         }
         return false;
