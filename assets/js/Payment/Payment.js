@@ -22,6 +22,7 @@ const changeStep = (props) => {
             props.progressBar.setCurrentStep(1);
 
             paymentAddress({container: 'content'});
+            updateDeliveryAddresses({container: 'addressHandler'});
 
             props.previousStep.removeClass('hidden');
             props.previousStep.on('click', () => {

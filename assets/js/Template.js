@@ -283,13 +283,13 @@ const paymentAddress = (props) => {
             <div class="row row--lower">
                 <div class="column column--left"></div>
                 <div class="column column--right">
-                    <a href="">
+                    <a onclick="editDeliveryAddress()" class="muted">
                         <i class="far fa-edit"></i> 
                     </a>
-                    <a href="" class="warning">
+                    <a onclick="removeDeliveryAddress()" class="warning muted">
                         <i class="far fa-trash-alt"></i>
                     </a>
-                    <a href="#">
+                    <a onclick="createDeliveryAddress()">
                         <i class="far fa-plus-square"></i>
                     </a>
                 </div>

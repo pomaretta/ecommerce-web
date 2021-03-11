@@ -104,22 +104,6 @@
 
         changeStep({step: 0,progressBar: progressBar,previousStep: $('#previousStep'), nextStep: $('#nextStep')});
 
-        // INTERACTIVITY
-        $(".address").each((index) => {
-            $(".address").get(index).onclick = () => {
-                if($(".address").get(index).classList.contains('selected')){
-                    $(".address").get(index).classList.remove('selected');
-                } else {
-                    $(".address").each((index) => {
-                        if($(".address").get(index).classList.contains('selected')){
-                            $(".address").get(index).classList.remove('selected');
-                        }
-                    })
-                    $(".address").get(index).classList.add('selected');
-                }
-            }
-        })
-
     </script>
 
 </body>
